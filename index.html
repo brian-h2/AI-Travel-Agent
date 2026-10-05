@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Screen 1: Home -->
+        <section id="screen-home" class="screen active">
+            <div class="logo-container">
+                <div class="cat-logo">😸✈️</div>
+            </div>
+            
+            <h1 class="app-title">AI Travel Agent</h1>
+            <p class="app-subtitle">Plan your trip in seconds with AI</p>
+
+            <button id="btn-start" class="btn-primary">Let's Begin</button>
+
+            <div class="tech-stack">
+                <p>Powered by</p>
+                <div class="tech-logos">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">OpenAI</span>
+                    <span class="tech-badge">WeatherAPI</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screen 2: Form -->
+        <section id="screen-form" class="screen hidden">
+            <div class="form-group">
+                <label>Number of travellers</label>
+                <div class="counter">
+                    <button id="btn-minus" type="button">-</button>
+                    <span id="travellers-count">1</span>
+                    <button id="btn-plus" type="button">+</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Flying from</label>
+                <input type="text" id="input-from" placeholder="New York City" value="New York City">
+            </div>
+
+            <div class="form-group">
+                <label>Flying to</label>
+                <input type="text" id="input-to" placeholder="Paris" value="Paris">
+            </div>
+
+            <div class="form-group">
+                <label>From Date</label>
+                <input type="date" id="input-from-date" value="2023-11-24">
+            </div>
+
+            <div class="form-group">
+                <label>To Date</label>
+                <input type="date" id="input-to-date" value="2023-12-05">
+            </div>
+
+            <div class="form-group">
+                <label>Budget</label>
+                <div class="input-with-icon">
+                    <span>$</span>
+                    <input type="number" id="input-budget" placeholder="5000" value="5000">
+                </div>
+            </div>
+
+            <button id="btn-plan" class="btn-primary">Plan my Trip!</button>
+        </section>
+
+        <!-- Screen 3: Results -->
+        <section id="screen-results" class="screen hidden">
+            <h2>Your Trip</h2>
+            
+            <div class="trip-summary">
+                <div class="dates-chip">
+                    <span id="res-from-date">25th Nov 23</span>
+                    <span class="dates-chip-separator">→</span>
+                    <span id="res-to-date">5th Dec 23</span>
+                </div>
+                <div class="route-chip">
+                    <span id="res-from">New York City</span> ✈️ <span id="res-to">Paris</span>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <h3>Weather</h3>
+                <p id="res-weather">Loading weather...</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Flights</h3>
+                <p id="res-flights">Finding the best options...</p>
+                <button class="btn-secondary">Book</button>
+            </div>
+
+            <div class="result-card">
+                <h3>Hotel</h3>
+                <p id="res-hotel">Finding accommodation...</p>
+                <button class="btn-secondary">Book</button>
+            </div>
+            
+            <button id="btn-back" class="btn-text">Start Over</button>
+        </section>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
